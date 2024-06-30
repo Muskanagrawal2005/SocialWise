@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= news.title %></title>
+    <link rel="stylesheet" href="/stylesheets/newsv.css">
+</head>
+<body>
+    <div class="whole">
+        <h1><%= news.title %></h1>
+        <div class="news-item">
+            <p><%= news.content %></p>
+            <p><strong>City:</strong> <%= news.city %></p>
+            <p><strong>Date:</strong> <%= news.created_at.toDateString() %></p>
+        </div>
+        <a id="home" href="/news">Back to News List</a>
+    </div>
+</body>
+</html>

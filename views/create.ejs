@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Form</title>
+    <link rel="stylesheet" href="/stylesheets/veventc.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Create Volunteering Opportunities</h1>
+    </div>
+    <form action="/volunteering/create" method="POST">
+        <div class="whole">
+            <div class="pad">
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required placeholder="Title...">
+
+            </div>
+            <div class="pad">
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" rows="4" required placeholder="Description..."></textarea>
+            </div>
+            <div class="pad">
+                <label for="date">Date:</label><br>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="pad">
+                <label for="organizer">Organizer:</label><br>
+                <input type="text" id="organizer" name="organizer" required placeholder="Organizer...">
+            </div>
+            <div class="pad">
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location" required placeholder="Location...">
+            </div>
+            <div class="pad">
+                <label for="city">City:</label><br>
+                <input type="text" id="city" name="city" required placeholder="City...">
+            </div>
+
+            <div class="pad">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= event.title %></title>
+    <link rel="stylesheet" href="/stylesheets/eventv.css">
+</head>
+<body>
+    <div class="whole">
+        <h1 class="event-title"><%= event.title %></h1>
+        <div class="event-details">
+            <p class="event-description"><%= event.description %></p>
+            <p class="event-date"><strong>Date:</strong> <%= event.date.toDateString() %></p>
+        </div>
+        <h2 class="attendees-title">Attendees</h2>
+        <ul class="attendees-list">
+            <% event.attendees.forEach(attendee => { %>
+                <li class="attendee"><%= attendee %></li>
+            <% }) %>
+        </ul>
+        <form class="join-form" action="/events/<%= event._id %>/join" method="POST">
+            <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your name..." required>
+            </div>
+            <button type="submit" class="submit-button">Join Event</button>
+        </form>
+        <a href="/events" class="back-link">Back to Events</a>
+        <a href="/profile" class="back-link">Back to Profile</a>
+    </div>
+</body>
+</html>

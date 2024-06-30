@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Event</title>
+    <link rel="stylesheet" href="/stylesheets/eventc.css">
+</head>
+<body>
+    <div class="heading">
+        <img src="/images/EVENRPIC.jpg" height="100px" width="100px">
+        <h1>Create New Event</h1>
+    </div>
+    <form action="/events/create" method="POST">
+        <div class="whole">
+            <div class="pad">
+                <label>Title:</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="pad">
+                <label>Description:</label>
+                <textarea name="description" required></textarea>
+            </div>
+            <div class="pad">
+                <label>Date:</label>
+                <input type="date" name="date" required>
+            </div>
+            <div class="pad">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

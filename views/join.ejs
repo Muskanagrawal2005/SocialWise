@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Volunteering Opportunity</title>
+    <link rel="stylesheet" href="/stylesheets/singlev.css">
+</head>
+
+<body>
+    <h1>Join Volunteering Opportunity</h1>
+
+    <div class="whole">
+        <h2>
+            <%= volunteering.title %>
+        </h2>
+        <div class="v-item">
+            <p>
+                <%= volunteering.description %>
+            </p>
+            <p>Date: <%= volunteering.date.toDateString() %>
+            </p>
+            <p>Organizer: <%= volunteering.organizer %>
+            </p>
+            <p>Location: <%= volunteering.location %>
+            </p>
+        </div>
+    </div>
+
+
+    <form action="/volunteering/join/<%= volunteering._id %>" method="POST">
+        <div class="whole">
+            <h2>Volunteers:</h2>
+            <div>
+                <% volunteering.volunteers.forEach(volunteer=> { %>
+                    <p>
+                        <%= volunteer.name %> (<%= volunteer.email %>)
+                    </p>
+                    <% }); %>
+            </div>
+            <div class="pad">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name...">
+            </div>
+
+            <div class="pad">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email...">
+            </div>
+
+            <div class="pad">
+                <button type="submit">Join</button>
+            </div>
+    </form>
+    </div>
+</body>
+
+</html>

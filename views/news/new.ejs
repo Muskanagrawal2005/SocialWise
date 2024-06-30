@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create News Article</title>
+    <link rel="stylesheet" href="/stylesheets/newsc.css">
+</head>
+
+<body>
+    <div class="heading">
+        <img src="/images/news.jpg" height="100px" width="100px">
+        <h1>Create New Article</h1>
+    </div>
+
+    <form action="/news/create" method="POST">
+        <div class="whole">
+            <div class="pad">
+                <div><label>Title:</label></div>
+                <input type="text" name="title" placeholder="Title..." required>
+            </div>
+            <div class="pad">
+                <div><label>Content:</label></div>
+                <textarea name="content" placeholder="Your message here..." required></textarea>
+            </div>
+            <div class="pad">
+                <div><label>City:</label></div>
+                <input type="text" name="city" placeholder="City..." required>
+            </div>
+            <div class="pad"><button type="submit">Submit</button></div>
+        </div>
+    </form>
+</body>
+
+</html>

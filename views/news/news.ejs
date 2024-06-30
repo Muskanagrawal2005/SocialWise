@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News List</title>
+    <link rel="stylesheet" href="/stylesheets/newsv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>News List</h1>
+    <form action="/news/search" method="POST">
+        <div class="whole">
+            <div class="pad">
+                <div><label for="city"><strong>Search by City:</strong> </label></div>
+                <input type="text" id="city" name="city" placeholder="Enter city name" required>
+            </div>
+            <div class="pad">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="whole">
+        
+        <div class="news-list">
+            <% newsList.forEach(news => { %>
+                <div class="news-item pad">
+                    <h2><%= news.title %></h2>
+                    <!-- <p><%= news.content %></p> -->
+                    <p>City: <%= news.city %></p>
+                    <p>Date: <%= news.created_at.toDateString() %></p>
+                    <a href="/news/details/<%= news._id %>">View Details</a>
+                </div>
+            <% }); %>
+        </div>
+        <a id ="home" href="/profile">Home</a>
+    </div>
+</body>
+</html>

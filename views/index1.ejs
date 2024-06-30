@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteering Opportunities</title>
+    <link rel="stylesheet" href="/stylesheets/volunteering.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>Volunteering Opportunities</h1>
+    </div>
+
+    <form action="/volunteering/search" method="GET">
+        <div class="whole">
+            <div class="pad">
+                <div><label for="city"><strong>Search by City:</strong> </label></div>
+                <input type="text" id="city" name="city" placeholder="Enter city name" required>
+            </div>
+            <div class="pad">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="whole">
+        <div class="opportunities-list">
+            <% volunteerings.forEach(volunteering => { %>
+                <div class="opportunity-item pad">
+                    <h2><%= volunteering.title %></h2>
+                    <p>Date: <%= volunteering.date.toDateString() %></p>
+                    <p>Organizer: <%= volunteering.organizer %></p>
+                    <p>Location: <%= volunteering.location %></p>
+                    <p>City: <%= volunteering.city %></p>
+                    <a href="/volunteering/details/<%= volunteering._id %>">View Details</a>
+                </div>
+            <% }); %>
+            </div>
+        <div class="pad">
+            <a class="button" href="/volunteering/create">Create New Volunteering Opportunity</a>
+            <a class="button" href="/profile">Back to Profile</a>
+        </div>
+    </div>
+</body>
+</html>
